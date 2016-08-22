@@ -56853,7 +56853,7 @@ module.exports = WebVRPolyfill;
 },{}],20:[function(_dereq_,module,exports){
 module.exports={
   "name": "aframe",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Building blocks for the VR Web",
   "homepage": "https://aframe.io/",
   "main": "dist/aframe.js",
@@ -58103,6 +58103,7 @@ module.exports.Component = registerComponent('look-controls', {
           z: currentRotation.z
         };
       } else {
+        console.log('hoge3');
         // Mouse rotation ignored with an active headset.
         // The user head rotation takes priority
         rotation = {
@@ -58111,6 +58112,7 @@ module.exports.Component = registerComponent('look-controls', {
           z: radToDeg(hmdEuler.z)
         };
       }
+      console.log('hoge');
       this.el.setAttribute('rotation', rotation);
     };
   })(),
