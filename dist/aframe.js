@@ -58086,12 +58086,14 @@ module.exports.Component = registerComponent('look-controls', {
       var mobile_with_no_censer = false;
       if (isMobile || mobile_with_no_censer) {
         // In mobile we allow camera rotation with touch events and sensors
+        console.log('hoge1');
         rotation = {
           x: radToDeg(hmdEuler.x) + radToDeg(pitchObject.rotation.x),
           y: radToDeg(hmdEuler.y) + radToDeg(yawObject.rotation.y),
           z: radToDeg(hmdEuler.z)
         };
       } else if (!sceneEl.is('vr-mode') || isNullVector(hmdEuler) || !this.data.hmdEnabled) {
+        console.log('hoge2');
         currentRotation = this.el.getComputedAttribute('rotation');
         deltaRotation = this.calculateDeltaRotation();
         // Mouse look only if HMD disabled or no info coming from the sensors
