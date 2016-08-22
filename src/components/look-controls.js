@@ -136,7 +136,8 @@ module.exports.Component = registerComponent('look-controls', {
       var sceneEl = this.el.sceneEl;
       var rotation;
       hmdEuler.setFromQuaternion(hmdQuaternion, 'YXZ');
-      if (isMobile) {
+      var mobile_with_no_censer = false;
+      if (isMobile || mobile_with_no_censer) {
         // In mobile we allow camera rotation with touch events and sensors
         rotation = {
           x: radToDeg(hmdEuler.x) + radToDeg(pitchObject.rotation.x),
